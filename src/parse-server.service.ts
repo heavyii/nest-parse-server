@@ -47,13 +47,12 @@ export class ParseServerService {
     ));
 
     if (options.mountGraphQL === true) {
-      const parseGraphQLServer = (this.parseGraphQLServer =
-        new ParseGraphQLServer(parseServer, {
+      this.parseGraphQLServer = new ParseGraphQLServer(parseServer, {
           graphQLPath: '*',
-        }));
+        });
       const app = new express();
-      parseGraphQLServer.applyGraphQL(app);
-      parseGraphQLServer.app = app;
+      this.parseGraphQLServer.applyGraphQL(app);
+      this.parseGraphQLServer.app = app;
       // this.logger.log(options.graphQLPath, 'parseGraphQLServer');
     }
   }

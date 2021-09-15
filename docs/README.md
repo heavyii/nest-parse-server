@@ -18,7 +18,7 @@ nest-parse-server will register as a global module.
 
 You can import with configuration
 
-```typescript
+```js
 // app.module.ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
